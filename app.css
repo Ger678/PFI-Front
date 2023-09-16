@@ -1,4 +1,45 @@
 /* Estilos de la barra lateral */
+#principal{
+    width: 1600px;
+    display: flex;
+    overflow: hidden;
+    flex-grow: 1;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
+    background-color: rgba(49, 51, 56, 1);
+}
+
+.navigation{
+    display: flex;
+    padding: 8px;
+    height: 40px;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(49, 51, 56, 1);
+    border-bottom: 1px solid white;
+    position: fixed;
+    top: 0px;
+    left: 440px;
+    width: -webkit-fill-available;
+}
+
+.principal-body{
+    display: flex;
+    overflow: hidden;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 0;
+    height: 100%;
+    width: -webkit-fill-available;
+    position: fixed;
+    top: 57px;
+    left: 440px;
+    background-color: rgba(49, 51, 56, 1);
+}
+
 .contenedor {
     display: flex;
     justify-content: center;
@@ -18,7 +59,7 @@
 }
 
 .barra-lateral {
-    background-color: #333;
+    background-color: rgba(49, 51, 56, 1);
     color: #fff;
     width: 60px;
     height: 100%;
@@ -29,38 +70,52 @@
     padding: 20px;
 }
 
-.barra-lateral h2 {
-    font-size: 14px;
-    margin-bottom: 10px;
+.servidores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-ul {
+.canales{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barra-lateral h2 {
+    font-size: 10px;
+    margin: 5px;
+    text-transform: uppercase;
+}
+
+.barra-lateral ul {
     list-style: none;
     padding: 0;
 }
 
-li {
+.barra-lateral li {
     margin-bottom: 5px;
 }
 
-a {
-    text-decoration: none;
+.barra-lateral a {
+    display: flex;
     color: #fff;
-    display: block;
-    padding: 10px;
     background-color: #444;
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
 }
 
-a:hover {
+.barra-lateral a:hover {
     background-color: #555;
 }
 
 /* Estilos del panel de canal */
 .panel-canal {
-    background-color: #cfcfcf;
-    color: #333;
-    width: 300px;
+    background-color: rgba(49, 51, 56, 1);
+    color: #cfcfcf;
+    width: 298px;
     height: 100%;
     position: fixed;
     top: 0px;
@@ -68,10 +123,12 @@ a:hover {
     overflow-y: auto;
     padding: 20px;
     z-index: 0;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
 }
 
 .panel-canal header {
-    background-color: #333;
+    background-color: rgba(49, 51, 56, 1);
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -84,6 +141,11 @@ a:hover {
 
 .dropdown-canales {
     margin-bottom: 20px;
+}
+
+.dropdown-canales select {
+    background-color: rgba(49, 51, 56, 1);
+    color: white;
 }
 
 label {
@@ -131,6 +193,6 @@ select {
 .icono {
     font-size: 20px;
     padding: 5px;
-    /* Aquí puedes agregar estilos para los iconos */
+    fill: white;
 }
 
