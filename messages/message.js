@@ -1,6 +1,6 @@
-// Función para agregar un mensaje a la lista de mensajes
+console.log("Lista de mensajes")
 function agregarMensaje(mensaje) {
-    const mensajesDiv = document.querySelector('.mensajes');
+    const mensajesDiv = window.document.querySelector('.mensajes');
     const nuevoMensaje = document.createElement('div');
     nuevoMensaje.classList.add('mensaje');
     nuevoMensaje.textContent = mensaje;
@@ -11,6 +11,7 @@ function agregarMensaje(mensaje) {
 function enviarMensaje() {
     const mensajeInput = document.getElementById('mensajeInput');
     const mensaje = mensajeInput.value;
+    console.log('Hola Mundo')
 
     if (mensaje.trim() !== '') {
         // Agrega el mensaje a la lista de mensajes
@@ -22,14 +23,18 @@ function enviarMensaje() {
 }
 
 // Agrega un evento de clic al botón "Enviar"
-const enviarBoton = document.getElementById('enviarMensaje');
-enviarBoton.addEventListener('click', enviarMensaje);
-
+var enviarBoton = window.document.getElementById('enviarMensaje');
+console.log(enviarBoton);
+//enviarBoton.addEventListener('click', enviarMensaje);
 // También puedes permitir el envío de mensajes al presionar Enter en el campo de entrada
 const mensajeInput = document.getElementById('mensajeInput');
 mensajeInput.addEventListener('keydown', function (event) {
-    console.log('hola mundo');
-    if (event.key === 'Enter') {
+    console.log(event.key);
+    if (event.key === 'enter') {
         enviarMensaje();
     }
 });
+
+function test(){
+    console.log('test')
+}

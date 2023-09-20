@@ -196,3 +196,40 @@ select {
     fill: white;
 }
 
+/* Mensaje */
+
+
+/* Estilos del contenedor principal */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Estilos del campo de entrada de mensajes */
+.campo-mensaje {
+    display: flex;
+    align-items: center;
+}
+
+#mensajeInput {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    padding: 15px;
+    border-radius: 3px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    margin: 20px;
+}
+
+/* Estilos de los mensajes (puedes personalizarlos según tus necesidades) */
+.mensaje {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}

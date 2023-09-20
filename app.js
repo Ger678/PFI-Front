@@ -20,9 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Ejemplo de cómo cargar contenido desde un archivo llamado "contenido.html"
     document.getElementById("cargarContenido").addEventListener("click", function(){
-        cargarContenido("message.html");
+        cargarContenido("/messages/message.html");
     });
 });
-
-
 
