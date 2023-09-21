@@ -1,40 +1,64 @@
-console.log("Lista de mensajes")
-function agregarMensaje(mensaje) {
+const jsonURL = 'messages.json';
+
+fetch(jsonURL)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    data.forEach(element => {
+        let contenido = element.contenido;
+        let usuario = element.id_remitente;
+        let hora = element.fecha_hora;
+
+        agregarMensaje(contenido, usuario, hora);
+    });
+  })
+  .catch(error => {
+    console.error('Error al cargar el archivo JSON:', error);
+  });
+
+function agregarMensaje(contenido, usuario, hora) {
     const mensajesDiv = window.document.querySelector('.mensajes');
+    const message = document.createElement('div');
     const nuevoMensaje = document.createElement('div');
-    nuevoMensaje.classList.add('mensaje');
-    nuevoMensaje.textContent = mensaje;
-    mensajesDiv.appendChild(nuevoMensaje);
+    const spanHour = document.createElement('span');
+    const hour = hora.toLocaleString('es-PY', { timeZone: 'UTC' });
+
+    spanHour.classList.add('message-hour');
+    spanHour.textContent = hour;
+
+    nuevoMensaje.classList.add('message-value');
+    nuevoMensaje.textContent = contenido;
+    if(usuario == 1){
+        message.classList.add('message-user')
+    } else {
+        message.classList.add('message-received')
+    }
+    message.appendChild(spanHour);
+    message.appendChild(nuevoMensaje);
+    // mensajesDiv.appendChild(nuevoMensaje);
+    mensajesDiv.appendChild(message);
 }
 
 // Función para enviar un mensaje
 function enviarMensaje() {
     const mensajeInput = document.getElementById('mensajeInput');
-    const mensaje = mensajeInput.value;
-    console.log('Hola Mundo')
-
-    if (mensaje.trim() !== '') {
+    const contenido = mensajeInput.value;
+    const usuario = 1;
+    const hora = new Date();
+    if (contenido.trim() !== '') {
         // Agrega el mensaje a la lista de mensajes
-        agregarMensaje(mensaje);
+        agregarMensaje(contenido, usuario, hora);
 
         // Limpia el campo de entrada
         mensajeInput.value = '';
     }
 }
 
-// Agrega un evento de clic al botón "Enviar"
-var enviarBoton = window.document.getElementById('enviarMensaje');
-console.log(enviarBoton);
-//enviarBoton.addEventListener('click', enviarMensaje);
-// También puedes permitir el envío de mensajes al presionar Enter en el campo de entrada
+// Enter
 const mensajeInput = document.getElementById('mensajeInput');
 mensajeInput.addEventListener('keydown', function (event) {
-    console.log(event.key);
-    if (event.key === 'enter') {
+    if (event.key === 'Enter') {
         enviarMensaje();
     }
 });
 
-function test(){
-    console.log('test')
-}

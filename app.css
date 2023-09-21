@@ -32,7 +32,7 @@
     align-self: stretch;
     align-items: flex-start;
     flex-shrink: 0;
-    height: 100%;
+    height: -webkit-fill-available;
     width: -webkit-fill-available;
     position: fixed;
     top: 57px;
@@ -175,7 +175,6 @@ select {
     background-color: #6a6a6a;
     border-radius: 50%;
     margin-right: 10px;
-    /* Aquí puedes agregar estilos para el avatar del usuario */
 }
 
 .informacion-usuario p {
@@ -197,15 +196,20 @@ select {
 }
 
 /* Mensaje */
-
-
-/* Estilos del contenedor principal */
-.contenedor {
+.mensajes{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: -webkit-fill-available;
+}
+
+/* Estilos del contenedor principal */
+.contenedor-principal {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
     justify-content: center;
-    height: 100vh;
+    height: 85%;
+    width: -webkit-fill-available;
 }
 
 /* Estilos del campo de entrada de mensajes */
@@ -224,12 +228,54 @@ select {
     border: 1px solid white;
     color: white;
     margin: 20px;
+    width: -webkit-fill-available;
 }
 
 /* Estilos de los mensajes (puedes personalizarlos según tus necesidades) */
-.mensaje {
-    background-color: #f0f0f0;
+.message-user {
+    display: flex;
+    flex-direction: row-reverse;
+    background: rgba(39, 168, 39, 0.644);
+    box-shadow: 1px 2px rgb(5, 20, 5);
+    color: white;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 10px;
+    margin-right: 35px;
+    align-self: flex-end;
 }
+
+.message-received {
+    display: flex;
+    flex-direction: row;
+    background: rgba(39, 168, 162, 0.185);
+    border: 1px solid white;
+    box-shadow: 1px 2px rgb(5, 20, 5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 35px;
+    align-self: flex-start;
+}
+
+.message-received .message-hour{
+    color: rgba(255, 255, 255, 0.822);
+    margin-right: 10px;
+    font-size: 11px;
+    align-self: end;
+}
+
+.message-user .message-hour{
+    color: rgba(255, 255, 255, 0.822);
+    margin-left: 10px;
+    font-size: 11px;
+    align-self: end;
+}
+
+.message-value{
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+

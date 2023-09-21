@@ -83,11 +83,20 @@
                 </div>
                 <div id="principal">
                     <div class="navigation"></div>
-                    <div id="principal-body" class="principal-body"></div>
+                    <div id="principal-body" class="principal-body">
+                        <div class="contenedor-principal">
+                            <div class="mensajes"></div>
+                            <div class="campo-mensaje">
+                                <button hidden id="enviarMensaje" style="width: 50px; height: 10px;">Enviar</button>
+                                <input type="text" id="mensajeInput" placeholder="Por favor escribe tu mensaje">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="app.js"></script>
+    <script src="messages\message.js"></script>
 </body>
 </html>
