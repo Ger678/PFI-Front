@@ -1,0 +1,64 @@
+.card{
+    display: flex;
+    height: 280px;
+    flex-direction: column;
+    border-radius: 8px;
+    background: #232428;
+    margin: 20px;
+    box-shadow: 2px 3px 5px black;
+}
+
+.image{
+    width: 319.33px;
+    height: 143px;
+    flex-shrink: 0;
+}
+
+.bottom{
+    width: 319.33px;
+    flex: 1 0 0;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo h2{
+    color: #F2F3F5;
+    font-family: Noto Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 133.333% */
+    margin-bottom: 0px;
+}
+
+.texto{
+    display: flex;
+    height: 73px;
+    padding: 10px;
+}
+
+.texto p{
+    color: #ccd2da;
+    font-family: Segoe UI Emoji;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+}
+
+.miembros{
+    color: #B5BAC1;
+    font-family: Noto Sans;
+    font-size: 11.063px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 144.633% */
+}
+
+.miembros p{
+    margin: 0;
+}

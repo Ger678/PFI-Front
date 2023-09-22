@@ -10,20 +10,30 @@
     background-color: rgba(49, 51, 56, 1);
 }
 
+#searchBox {
+    display: flex;
+    bottom: 0;
+    padding: 5px;
+    border-radius: 3px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    margin: 5px;
+}
+
 .navigation{
     display: flex;
     padding: 8px;
     height: 40px;
-    align-self: stretch;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row-reverse;
     background-color: rgba(49, 51, 56, 1);
     border-bottom: 1px solid white;
     position: fixed;
     top: 0px;
     left: 440px;
     width: -webkit-fill-available;
+    align-items: center;
+    padding-right: 20px;
 }
 
 .principal-body{
@@ -215,13 +225,19 @@ select {
 /* Estilos del campo de entrada de mensajes */
 .campo-mensaje {
     display: flex;
-    align-items: center;
+    flex-direction: row-reverse;
+    position: fixed;
+    bottom: 0;
+    width: -webkit-fill-available;
+}
+
+#enviarMensaje :hover{
+    font-size: 25px;
 }
 
 #mensajeInput {
     display: flex;
-    position: fixed;
-    bottom: 0;
+
     padding: 15px;
     border-radius: 3px;
     background: none;

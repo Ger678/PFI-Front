@@ -3,7 +3,6 @@ const jsonURL = 'messages.json';
 fetch(jsonURL)
   .then(response => response.json())
   .then(data => {
-    console.log(data);
     data.forEach(element => {
         let contenido = element.contenido;
         let usuario = element.id_remitente;
@@ -60,5 +59,10 @@ mensajeInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         enviarMensaje();
     }
+});
+
+const mensajeBoton = document.getElementById('enviarMensaje');
+mensajeBoton.addEventListener('click', function (event) {
+    enviarMensaje();
 });
 
