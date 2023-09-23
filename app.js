@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const searchServers = document.getElementById('searchButton')
-    const sawMessages = document.getElementById('cargarContenido')
-    const messages = document.getElementById('mensajes')
+    const sawMessages = document.getElementsByClassName('canales-texto')
+    const messages = document.getElementById('principal-body')
+    const servers = document.getElementById('servers')
+
+    console.log(sawMessages)
+
 
     function cargarContenido(archivo) {
 
@@ -21,13 +25,36 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ejemplo de cómo cargar contenido desde un archivo llamado "contenido.html"
     searchServers.addEventListener("click", function(){
         console.log("Hola")
-        messages.setAttribute("hidden","");
+        messages.setAttribute("style","display:none");
+        servers.setAttribute("style","display:flex");
     });
 
+    // let options = [];
 
-    document.getElementById('canales-texto').addEventListener("click", function(){
-        cargarContenido("app.html");
-        cargarContenido("app.js");
-    })
+    // for(let i=0; i < sawMessages.length; i++){
+    //     options.push(sawMessages[i])
+    //     console.log(options)
+    // }
+
+    // sawMessages.forEach(element =>{
+    //     options.append(element);
+    // })
+
+    // options.forEach(element => {
+    //     console.log("mensajes")
+
+    //     element.addEventListener("click", function(){
+    //         messages.setAttribute("style","display:flex");
+    //         servers.setAttribute("style","display:none");
+    //     });
+    // });
+    sawMessages.forEach(element => {
+        console.log(element)
+    });
+    sawMessages.addEventListener("click", function(){
+        console.log("mensajes")
+        messages.setAttribute("style","display:flex");
+        servers.setAttribute("style","display:none");
+    });
 });
 
