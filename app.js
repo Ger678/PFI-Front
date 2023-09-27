@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const searchServers = document.getElementById('searchButton')
-    const sawMessages = document.getElementsByClassName('canales-texto')
+    const sawMessages = document.getElementsByTagName('option')
     const messages = document.getElementById('principal-body')
     const servers = document.getElementById('servers')
 
@@ -24,9 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Ejemplo de cómo cargar contenido desde un archivo llamado "contenido.html"
     searchServers.addEventListener("click", function(){
-        console.log("Hola")
-        messages.setAttribute("style","display:none");
-        servers.setAttribute("style","display:flex");
+        messages.style.display="none";
+        servers.style.display="flex";
     });
 
     // let options = [];
@@ -48,13 +47,23 @@ document.addEventListener("DOMContentLoaded", function () {
     //         servers.setAttribute("style","display:none");
     //     });
     // });
-    sawMessages.forEach(element => {
-        console.log(element)
-    });
-    sawMessages.addEventListener("click", function(){
-        console.log("mensajes")
-        messages.setAttribute("style","display:flex");
-        servers.setAttribute("style","display:none");
-    });
+    // sawMessages.forEach(element => {
+    //     console.log(element)
+    // });
+
+    for (let i of sawMessages) {
+        console.log(i);
+        i.addEventListener("click", function(){
+            console.log("mensajes")
+            messages.style.display="flex";
+            servers.style.display="none";
+        })
+    }
+
+    // sawMessages.addEventListener("click", function(){
+    //     console.log("mensajes")
+    //     messages.setAttribute("style","display:flex");
+    //     servers.setAttribute("style","display:none");
+    // });
 });
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Tu Aplicación de Mensajería</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS aquí -->
+</head>
+<body>
+    <header>
+        <h1>Iniciar Sesión</h1>
+    </header>
+    <main>
+        <form id="inicio-sesion-form">
+            <label for="nombre">Nombre de Usuario:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button id="inicio" type="submit" hidden>Iniciar Sesión</button>
+        </form>
+    </main>
+    <footer>
+        <p>¿No tienes una cuenta? <a href="index.html">Regístrate</a></p>
+    </footer>
+    <script>
+        let usuario = document.getElementById("nombre").value;
+        let contrasena = document.getElementById("contrasena").value;
+        let inicio = document.getElementById("inicio");
+        
+        inicio.addEventListener("DOMContentLoaded",function(){
+            if (usuario == 'user' && contrasena == '12345'){
+                inicio.setAttribute("hidden", false)
+            }
+        })
+
+    </script>
+</body>
+</html>
