@@ -17,6 +17,7 @@
 
             <label for="contrasena">Contraseña:</label>
             <input type="password" id="contrasena" name="contrasena" required>
+            <p id="message" style="background: #942a2a; padding: 10px; color: white; display: none"></p>
 
             <button type="submit">Iniciar Sesión</button>
         </form>
@@ -26,8 +27,8 @@
     </footer>
     <script>
         console.log('Hola')
-        let usuario = document.getElementById("nombre").value;
-        let contrasena = document.getElementById("contrasena").value;
+        let usuario = document.getElementById("nombre");
+        let contrasenia = document.getElementById("contrasena");
         let form = document.getElementById("inicio-sesion-form");
         
         form.addEventListener("submit",function(e){
@@ -36,7 +37,35 @@
         })
 
         function login() {
-            window.location.href = 'app.html';
+            const data = JSON.stringify({
+                nombre_usuario: usuario.value,
+                contrasenia: contrasenia.value
+            })
+            console.log(data)
+
+            fetch("http://127.0.0.1:5000/auth/login",{
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: data,
+                mode:"cors",
+                credentials: 'same-origin',
+            }).then(response => {
+                if(response.status === 200) {
+                    console.log(response);
+                    return response.json().then(data => {
+                        console.log(data);
+                        window.location.href = 'app.html';
+                    });
+                } else {
+                    return response.json().then(data => {
+                        document.getElementById("message").innerHTML = data.message;
+                        document.getElementById("message").style.display = "";
+                        console.log("German " + data.message);
+                    })
+                }
+            })
         }
 
     </script>

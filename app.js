@@ -1,3 +1,40 @@
+window.addEventListener('load', function() {
+    getProfile()
+})
+
+function getProfile(){
+    const url = "http://127.0.0.1:5000/auth/profile";
+    
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        mode:"cors",
+        credentials: 'same-origin',
+    })
+    .then(response => {
+        if (response.status === 200) {
+
+            console.log(response)
+            // return response.json().then(data => {
+
+            //     document.getElementById("username").innerText = data.username;
+            //     document.getElementById("email").innerText = data.email;
+            //     document.getElementById("first_name").innerText = data.first_name;
+            //     document.getElementById("last_name").innerText = data.last_name;
+            // });
+        } else {
+            return response.json().then(data => {
+                console.log(response);
+                // document.getElementById("message").innerHTML = data.message;
+            });
+        }
+    })
+    .catch(error => {
+        document.getElementById("message").innerHTML = "An error occurred.";
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const searchServers = document.getElementById('searchButton')
@@ -5,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const messages = document.getElementById('principal-body')
     const servers = document.getElementById('servers')
 
-    console.log(sawMessages)
 
 
     function cargarContenido(archivo) {
@@ -28,33 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
         servers.style.display="flex";
     });
 
-    // let options = [];
-
-    // for(let i=0; i < sawMessages.length; i++){
-    //     options.push(sawMessages[i])
-    //     console.log(options)
-    // }
-
-    // sawMessages.forEach(element =>{
-    //     options.append(element);
-    // })
-
-    // options.forEach(element => {
-    //     console.log("mensajes")
-
-    //     element.addEventListener("click", function(){
-    //         messages.setAttribute("style","display:flex");
-    //         servers.setAttribute("style","display:none");
-    //     });
-    // });
-    // sawMessages.forEach(element => {
-    //     console.log(element)
-    // });
-
     for (let i of sawMessages) {
-        console.log(i);
         i.addEventListener("click", function(){
-            console.log("mensajes")
             messages.style.display="flex";
             servers.style.display="none";
         })
