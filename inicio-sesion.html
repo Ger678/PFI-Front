@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - Tu Aplicación de Mensajería</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS aquí -->
+    <link rel="stylesheet" href="register.css"> <!-- Enlaza tu archivo CSS aquí -->
 </head>
 <body>
     <header>
@@ -18,22 +18,26 @@
             <label for="contrasena">Contraseña:</label>
             <input type="password" id="contrasena" name="contrasena" required>
 
-            <button id="inicio" type="submit" hidden>Iniciar Sesión</button>
+            <button type="submit">Iniciar Sesión</button>
         </form>
     </main>
     <footer>
         <p>¿No tienes una cuenta? <a href="index.html">Regístrate</a></p>
     </footer>
     <script>
+        console.log('Hola')
         let usuario = document.getElementById("nombre").value;
         let contrasena = document.getElementById("contrasena").value;
-        let inicio = document.getElementById("inicio");
+        let form = document.getElementById("inicio-sesion-form");
         
-        inicio.addEventListener("DOMContentLoaded",function(){
-            if (usuario == 'user' && contrasena == '12345'){
-                inicio.setAttribute("hidden", false)
-            }
+        form.addEventListener("submit",function(e){
+            e.preventDefault();
+            login()
         })
+
+        function login() {
+            window.location.href = 'app.html';
+        }
 
     </script>
 </body>
