@@ -15,15 +15,18 @@ function getProfile(){
         if (response.status === 200) {
 
             console.log(response)
-            // return response.json().then(data => {
+            return response.json().then(data => {
 
-            //     document.getElementById("username").innerText = data.username;
-            //     document.getElementById("email").innerText = data.email;
-            //     document.getElementById("first_name").innerText = data.first_name;
-            //     document.getElementById("last_name").innerText = data.last_name;
-            // });
+                document.getElementById("user-name").innerText = data.nombre_usuario;
+                imagen = document.createElement('img');
+                imagen.src = data.imagen
+                document.getElementById("user-image").appendChild(imagen);
+                // document.getElementById("first_name").innerText = data.first_name;
+                // document.getElementById("last_name").innerText = data.last_name;
+            });
         } else {
             return response.json().then(data => {
+                console.log(data);
                 console.log(response);
                 // document.getElementById("message").innerHTML = data.message;
             });

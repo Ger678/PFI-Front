@@ -49,13 +49,13 @@
                     'Content-Type': 'application/json'
                 },
                 body: data,
-                mode:"cors",
                 credentials: 'same-origin',
             }).then(response => {
                 if(response.status === 200) {
                     console.log(response);
                     return response.json().then(data => {
                         console.log(data);
+                        window.localStorage.setItem('data', JSON.stringify(data));
                         window.location.href = 'app.html';
                     });
                 } else {

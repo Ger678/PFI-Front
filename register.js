@@ -1,10 +1,11 @@
 const userName = document.getElementById('nombre');
 const constrasenia = document.getElementById('contrasena');
 const imagen = document.getElementById('insertar-imagen');
+const form = document.getElementById('registro-form');
 const submit = document.getElementsByTagName('button');
 
 console.log("holas")
-submit[0].addEventListener('click', function () {
+form.addEventListener('submit', function () {
 
     const form = {
         "nombre_usuario" : userName.value,
