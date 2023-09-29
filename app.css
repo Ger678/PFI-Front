@@ -1,4 +1,7 @@
 /* Estilos de la barra lateral */
+body{
+    background-color: rgba(49, 51, 56, 1);
+}
 #principal{
     width: 1600px;
     display: flex;
@@ -21,6 +24,16 @@
     margin: 5px;
 }
 
+#server-container{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+#lista :hover{
+    cursor: pointer;
+}
+
 .navigation{
     display: flex;
     padding: 8px;
@@ -34,6 +47,7 @@
     width: -webkit-fill-available;
     align-items: center;
     padding-right: 20px;
+    z-index: 10;
 }
 
 .principal-body{
@@ -42,9 +56,8 @@
     align-self: stretch;
     align-items: flex-start;
     flex-shrink: 0;
-    height: -webkit-fill-available;
     width: -webkit-fill-available;
-    position: fixed;
+    position: absolute;
     top: 57px;
     left: 440px;
     background-color: rgba(49, 51, 56, 1);
@@ -107,7 +120,7 @@
     margin-bottom: 5px;
 }
 
-.barra-lateral a {
+.barra-lateral img {
     display: flex;
     color: #fff;
     background-color: #444;
@@ -185,6 +198,7 @@ select {
     background-color: #6a6a6a;
     border-radius: 50%;
     margin-right: 10px;
+    display: flex;
 }
 
 .informacion-usuario p {
@@ -196,7 +210,9 @@ select {
 .iconos {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
+    width: 25vh;
+
 }
 
 .icono {
@@ -205,11 +221,17 @@ select {
     fill: white;
 }
 
+.icono :hover {
+    content: 'salir';
+    font-size: 25px;
+}
+
 /* Mensaje */
-.mensajes{
+#mensajes{
     display: flex;
     flex-direction: column;
     width: -webkit-fill-available;
+    margin-bottom: 80px;
 }
 
 /* Estilos del contenedor principal */
@@ -229,6 +251,7 @@ select {
     position: fixed;
     bottom: 0;
     width: -webkit-fill-available;
+    background: rgba(49, 51, 56, 1);
 }
 
 #enviarMensaje :hover{
@@ -250,7 +273,7 @@ select {
 /* Estilos de los mensajes (puedes personalizarlos según tus necesidades) */
 .message-user {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     background: rgba(39, 168, 39, 0.644);
     box-shadow: 1px 2px 6px rgb(5, 20, 5);
     color: white;
@@ -263,7 +286,7 @@ select {
 
 .message-received {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     background: rgba(39, 168, 162, 0.185);
     box-shadow: 1px 2px 6px rgb(5, 20, 5);
     color: white;
@@ -274,17 +297,32 @@ select {
     align-self: flex-start;
 }
 
+.message-emitter{
+    margin-bottom: 3px;
+    margin-top: 0;
+    font-style: italic;
+    font-size: 10px;
+}
+
+.message-user .message-emitter{
+    align-self: end;
+}
+
+.message-received .message-emitter{
+    align-self: start;
+}
+
 .message-received .message-hour{
     color: rgba(255, 255, 255, 0.822);
     margin-right: 10px;
-    font-size: 11px;
-    align-self: end;
+    font-size: 8px;
+    align-self: start;
 }
 
 .message-user .message-hour{
     color: rgba(255, 255, 255, 0.822);
     margin-left: 10px;
-    font-size: 11px;
+    font-size: 8px;
     align-self: end;
 }
 
@@ -374,3 +412,45 @@ select {
 .miembros p{
     margin: 0;
 }
+
+.canal{
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid #5eb908;
+    padding: 3px;
+    margin: 20px 5px;
+    background: #44444463;
+    align-items: center;
+    justify-content: center;
+}
+
+.canal :hover{
+    cursor: pointer;
+    
+}
+
+.canal h3{
+    margin: 0;
+}
+
+
+
+
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(49, 51, 56, 1); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #5eb908; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
